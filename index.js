@@ -115,7 +115,7 @@ usbcam.prototype.write = function write(data) {
 		});
 		get.pipe(post).on('error', function(err) {
 
-			mod.log.error("usbcam: Error streaming snapshot");
+			mod.log.error("usbcam: Error streaming snapshot: %s", err);
 		});
 		get.on('end', function() { post.end(); });
 
