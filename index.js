@@ -64,7 +64,7 @@ function usbcam(opts, app) {
 
 			mod.log.info("usbcam: Found camera");
 			mod.emit('register', mod);
-			process.nextTick(mod.plugin);
+			mod.plugin();
 		}
 
 	});
@@ -74,7 +74,7 @@ function usbcam(opts, app) {
 		mod.log.info("usbcam: Camera detected");
 
 		mod.emit('register', mod);
-		process.nextTick(mod.plugin);
+		mod.plugin();
 	};
 };
 
