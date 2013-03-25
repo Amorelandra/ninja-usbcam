@@ -71,7 +71,6 @@ function usbcam(opts, app) {
 
 	function init() {
 
-		var mod = this;
 		mod.log.info("usbcam: Camera detected");
 
 		mod.emit('register', mod);
