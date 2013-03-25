@@ -63,7 +63,7 @@ function usbcam(opts, app) {
 		if(stats.isCharacterDevice()) {
 
 			mod.log.info("usbcam: Found camera");
-			mod.register(mod);
+			mod.emit('register', mod);
 			setImmediate(mod.plugin);
 		}
 
@@ -74,7 +74,7 @@ function usbcam(opts, app) {
 		var mod = this;
 		mod.log.info("usbcam: Camera detected");
 
-		mod.register(mod);
+		mod.emit('register', mod);
 		setImmediate(mod.plugin);
 	};
 };
