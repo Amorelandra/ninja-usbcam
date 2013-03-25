@@ -56,14 +56,14 @@ function usbcam(opts, app) {
 
 		if(err) { 
 
-			this.log.info("usbcam: No camera detected");
+			mod.log.info("usbcam: No camera detected");
 			return; 
 		}
 
 		if(stats.isCharacterDevice()) {
 
-			this.log.info("usbcam: Found camera");
-			this.register(this);
+			mod.log.info("usbcam: Found camera");
+			mod.register(mod);
 			setImmediate(mod.plugin);
 		}
 
@@ -72,9 +72,9 @@ function usbcam(opts, app) {
 	function init() {
 
 		var mod = this;
-		this.log.info("usbcam: Camera detected");
+		mod.log.info("usbcam: Camera detected");
 
-		this.register(this);
+		mod.register(mod);
 		setImmediate(mod.plugin);
 	};
 };
