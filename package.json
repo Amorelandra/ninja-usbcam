@@ -1,0 +1,23 @@
+{
+  "name": "ninja-usbcam",
+  "version": "0.0.0",
+  "description": "ninja block usb camera driver",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nexxy/ninja-usbcam"
+  },
+  "keywords": [
+    "ninja",
+    "blocks",
+    "usb",
+    "camera"
+  ],
+  "author": "Ninja Blocks",
+  "license": "BSD",
+  "config": {
+    "streamHost":"stream.ninja.is",
+    "streamPort":3003,
+    "blockToken":null,
+  }
+}
