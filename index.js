@@ -104,7 +104,7 @@ usbcam.prototype.write = function write(data) {
 	var get = http.get(getOpts, function(res) {
 
 		postOpts.headers = res.headers;
-		postOpts.headers['X-Ninja-Token'] = this.app.token;
+		postOpts.headers['X-Ninja-Token'] = mod.app.token;	
 
 		var post = proto.request(postOpts, function(res) {
 
