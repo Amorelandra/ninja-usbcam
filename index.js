@@ -104,7 +104,7 @@ usbcam.prototype.write = function write(data) {
 	var get = http.get(getOpts, function(res) {
 
 		postOpts.headers = res.headers;
-		postOpts.headers['X-Ninja-Token'] = mod.opts.blockToken;
+		postOpts.headers['X-Ninja-Token'] = this.app.token;
 
 		var post = proto.request(postOpts, function(res) {
 
@@ -135,7 +135,11 @@ usbcam.prototype.heartbeat = function heartbeat(bool) {
 			mod = this
 			, ival = this.opts.interval || 10000
 		;
-		this.log.debug("usbcam: Setting data interval to %s", ival);
+		this.log.debug(
+
+			"usbcam: Setting data interval to %s"
+			, Math.round(ival / 1000)
+		);
 		
 		this.emit('data', '1');
 		this.interval = setInterval(function() {
