@@ -98,7 +98,7 @@ usbcam.prototype.write = function write(data) {
 		}
 		, mod = this
 	;
-	console.log(postOpts);
+	
 	var proto = (this.opts.streamPort == 443 ? https : http);
 
 	var get = http.get(getOpts, function(res) {
