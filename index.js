@@ -112,14 +112,13 @@ usbcam.prototype.write = function write(data) {
 
 				mod.log.debug("usbcam: streaming done");
 			});
-		}).on('error', function(err) {
+		});
+
+		res.pipe(post).on('error', function(err) {
 
 			mod.log.error("usbcam: Error streaming snapshot: %s", err);
 		});
-		get.on('data', function(dat) {
-
-			post.write(dat, 'binary');
-		})
+	
 		get.on('end', function() { post.end(); });
 
 	}).on('error', function(e) {
