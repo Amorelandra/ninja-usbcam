@@ -17,7 +17,7 @@
   "license": "BSD",
   "config": {
     "streamHost":"stream.ninja.is",
-    "streamPort":3003,
+    "streamPort":443,
     "blockToken":null
   }
 }
