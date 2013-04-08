@@ -29,7 +29,7 @@ function usbcam(opts, app) {
 
 	fs.watch('/dev/', function(event, filename) {
 
-		if(!(filename.substr(0, 5) === 'video')) { return; }
+		if(!(filename) || !(filename.substr(0, 5) === 'video')) { return; }
 		fs.lstat(path.resolve('/dev', filename), function(err, stats) {
 
 			if(err) {
