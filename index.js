@@ -91,15 +91,15 @@ usbcam.prototype.write = function write(data) {
 		}	
 		, postOpts = {
 
-			host : this.opts.streamHost
-			, port : this.opts.streamPort
+			host : this.app.opts.streamHost
+			, port : this.app.opts.streamPort
 			, path : '/rest/v0/camera/' + this.guid + '/snapshot'
 			, method : 'POST'
 		}
 		, mod = this
 	;
 	
-	var proto = (this.opts.streamPort == 443 ? https : http);
+	var proto = (this.app.opts.streamPort == 443 ? https : http);
 
 	var get = http.get(getOpts, function(res) {
 
