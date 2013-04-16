@@ -1,6 +1,6 @@
 {
   "name": "ninja-usbcam",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ninja block usb camera driver",
   "main": "index.js",
   "repository": {
